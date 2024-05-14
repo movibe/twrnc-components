@@ -17,14 +17,7 @@ defaultConfig.resolver.resolveRequest = (context, moduleName, platform) => {
     platform
   );
 
-  if (
-    process.env.STORYBOOK_ENABLED !== "true" &&
-    defaultResolveResult?.filePath?.includes?.(".ondevice/")
-  ) {
-    return {
-      type: "empty",
-    };
-  }
+  defaultResolveResult?.filePath?.includes?.(".ondevice/")
 
   return defaultResolveResult;
 };

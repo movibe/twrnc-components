@@ -1,6 +1,7 @@
 export default ({ config }) => ({
   ...config,
   name: "HelloWorld",
+  "scheme": "com.myapp",
   slug: "expo-template-blank-typescript",
   version: "1.0.0",
   orientation: "portrait",
@@ -27,6 +28,10 @@ export default ({ config }) => ({
     },
   },
   web: {
+    "bundler": "metro",
     favicon: "./assets/favicon.png",
   },
+  plugins: [
+    "expo-router"
+  ]
 });
