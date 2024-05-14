@@ -19,7 +19,8 @@
     "test": "jest --coverage=false",
     "testDebug": "jest -o --watch --coverage=false",
     "testFinal": "jest",
-    "updateSnapshots": "jest -u --coverage=false"
+    "updateSnapshots": "jest -u --coverage=false",
+    "g": "scaffdog generate"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "1.23.1",
@@ -46,6 +47,7 @@
     "twrnc": "4.2.0"
   },
   "devDependencies": {
+"scaffdog": "3.0.0",
     "@babel/core": "^7.19.3",
     "@babel/plugin-proposal-export-namespace-from": "7.18.9",
     "@expo/metro-runtime": "~3.2.1",

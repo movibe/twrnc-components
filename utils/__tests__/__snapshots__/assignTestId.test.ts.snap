@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quality Gate assignTestId should test assignTestId 1`] = `"Modal_Box"`;
+
+exports[`Quality Gate mockTestID should test MockId 1`] = `"Modal_Box"`;
