@@ -1,15 +1,10 @@
-import { StyleSheet, View } from "react-native";
-import { StorybookUIRoot } from ".././.ondevice";
+import { tailwind } from '@/libs/tailwind'
+import { View } from 'react-native'
+import { StorybookUIRoot } from '.././.ondevice'
 export default function Page() {
   return (
-    <View style={styles.container}>
+    <View style={[tailwind('flex-1')]}>
       <StorybookUIRoot />
     </View>
-  );
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

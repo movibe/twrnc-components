@@ -14,7 +14,7 @@ defaultConfig.transformer.unstable_allowRequireContext = true
 defaultConfig.resolver.resolveRequest = (context, moduleName, platform) => {
   const defaultResolveResult = context.resolveRequest(context, moduleName, platform)
 
-  defaultResolveResult?.filePath?.includes?.(".ondevice/")
+  defaultResolveResult?.filePath?.includes?.('.ondevice/')
 
   return defaultResolveResult
 }

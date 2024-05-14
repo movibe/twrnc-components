@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['expo', 'prettier'],
+  extends: ['expo', 'plugin:tailwindcss/recommended', 'prettier'],
   plugins: ['prettier', 'import'],
   rules: {
     'prettier/prettier': [
