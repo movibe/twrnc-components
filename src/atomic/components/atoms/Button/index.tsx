@@ -1,4 +1,4 @@
-import { tailwind } from '@/libs/tailwind'
+import { tailwind } from '@/src/libs/tailwind'
 import React from 'react'
 import { Text, TouchableOpacity } from 'react-native'
 

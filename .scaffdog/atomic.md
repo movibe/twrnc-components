@@ -1,6 +1,6 @@
 ---
 name: "component"
-root: "./atomic/components"
+root: "./src/atomic/components"
 output: "*"
 ignore: []
 questions:
@@ -11,8 +11,8 @@ questions:
 
 ```jsx
 import { View } from 'react-native'
-import {tailwind} from '@/libs/tailwind'
-import {assignTestId} from '@/utils/assignTestId'
+import {tailwind} from '@/src/libs/tailwind'
+import {assignTestId} from '@/src/utils/assignTestId'
 
 export type {{ inputs.name | pascal }}Props = {
   testID?: string
@@ -55,8 +55,8 @@ export const Basic: Story = {
 # `{{ inputs.name | pascal }}/{{ inputs.name | pascal }}.test.tsx`
 
 ```jsx
-import {mockTestID} from '@/utils/assignTestId'
-import {render, screen} from '@/utils/wrapper'
+import {mockTestID} from '@/src/utils/assignTestId'
+import {render, screen} from '@/src/utils/wrapper'
 import { {{ inputs.name | pascal }}Props, {{ inputs.name | pascal }}} from './'
 
 describe(`{{ inputs.name | pascal }}`, () => {

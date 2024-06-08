@@ -1,0 +1,9 @@
+{
+  "asgi": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "asgi",
+    "body": [
+      "{...assignTestId('$1', `$2`)}"
+    ]
+  }
+}
