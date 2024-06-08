@@ -1,7 +1,7 @@
 /** @type{import("@storybook/react-webpack5").StorybookConfig} */
 module.exports = {
   stories: [
-    "../atomic/components/**/*.stories.@(ts|tsx)",
+    "../src/atomic/components/**/*.stories.@(ts|tsx)",
   ],
   addons: [
     "@storybook/addon-links",

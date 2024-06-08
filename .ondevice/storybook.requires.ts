@@ -14,13 +14,13 @@ import "@storybook/addon-ondevice-actions/register";
 const normalizedStories = [
   {
     titlePrefix: "",
-    directory: "./atomic/components",
+    directory: "./src/atomic/components",
     files: "**/*.stories.@(ts|tsx)",
     importPathMatcher:
       /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(ts|tsx))$/,
     // @ts-ignore
     req: require.context(
-      "../atomic/components",
+      "../src/atomic/components",
       true,
       /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(ts|tsx))$/
     ),

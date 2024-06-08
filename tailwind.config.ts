@@ -14,6 +14,7 @@ export default {
       },
       colors: {
         background: '#fff',
+        'dark-background': '#333',
         black: '#000',
         white: '#fff',
       },

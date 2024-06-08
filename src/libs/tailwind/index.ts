@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { create } from 'twrnc'
 
-import tailwindConfig from '../../tailwind.config'
+import tailwindConfig from '../../../tailwind.config'
 
 export type TailwindColor = keyof typeof tailwindConfig.theme.extend.colors
 

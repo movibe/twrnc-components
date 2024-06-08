@@ -1,8 +1,21 @@
 import { withBackgrounds } from "@storybook/addon-ondevice-backgrounds";
 import type { Preview } from "@storybook/react";
+import { UIProvider } from '../src/atomic/provider/UIProvider';
+import React from "react";
+
+
+const withThemeProvider = (Story: any, context: any) => {
+  return (
+      <UIProvider>
+        <Story {...context} />
+      </UIProvider>
+  )
+}
+
+
 
 const preview: Preview = {
-  decorators: [withBackgrounds],
+  decorators: [withBackgrounds, withThemeProvider],
 
   parameters: {
     backgrounds: {
@@ -22,5 +35,6 @@ const preview: Preview = {
     },
   },
 };
+
 
 export default preview;
