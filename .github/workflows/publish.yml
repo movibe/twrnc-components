@@ -25,9 +25,7 @@ jobs:
 
       - name: Build
         run: |
-          - name: Build
-            run: |
-              yarn bundle
+          yarn bundle
 
       - name: Replace single file
         uses: richardrigutins/replace-in-files@v2
