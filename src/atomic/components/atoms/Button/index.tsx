@@ -1,6 +1,7 @@
 import { tailwind } from '@/src/libs/tailwind'
 import React from 'react'
-import { Text, TouchableOpacity } from 'react-native'
+import { TouchableOpacity } from 'react-native'
+import { Text } from '../Text'
 
 export type ButtonProps = {
   onPress?: () => void
@@ -11,9 +12,11 @@ export const Button = ({ onPress, children }: ButtonProps) => {
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[tailwind('px-2 h-8 rounded-md  bg-indigo-400 justify-center items-center')]}
+      style={[tailwind('h-8 items-center justify-center rounded-md bg-indigo-400 px-2')]}
     >
-      <Text style={[tailwind('text-white font-bold')]}>{children}</Text>
+      <Text style={[tailwind('font-bold text-white')]} numberOfLines={1}>
+        {children}
+      </Text>
     </TouchableOpacity>
   )
 }

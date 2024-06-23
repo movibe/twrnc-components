@@ -4,7 +4,7 @@ import { View } from 'react-native'
 import { Button } from '.'
 
 const meta = {
-  title: 'Button',
+  title: 'Atoms/Button',
   component: Button,
   args: {
     children: 'Hello world',
