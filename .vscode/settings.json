@@ -19,6 +19,8 @@
     "style",
   ],
   "tailwindCSS.experimental.classRegex": [
+    "([\"'`][^\"'`]*.*?[\"'`])",
+    "[\"'`]([^\"'`]*).*?[\"'`]",
     "tw`([^`]*)",
     [
       "tv\\((([^()]*|\\([^()]*\\))*)\\)",
@@ -30,8 +32,7 @@
       "'([^']*)'",
     ]
   ],
-  "storyExplorer.storybookConfigDir": ".storybook/web",
   "accessibility.signalOptions": {
     "volume": 0
-  }
+  },
 }
