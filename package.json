@@ -23,6 +23,7 @@
     "test": "jest --coverage=false",
     "testDebug": "jest -o --watch --coverage=false",
     "testFinal": "jest",
+    "test:coverage": "yarn test --coverage",
     "test:u": "jest -u --coverage=false",
     "exports": "npx tsx scripts/export-components.ts && yarn eslint src --fix",
     "bundle": "tsup src/atomic/components/index.ts --format esm,cjs --dts --external react",
