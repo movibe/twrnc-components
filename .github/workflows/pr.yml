@@ -35,7 +35,6 @@ jobs:
         with:
           github_token: '${{ secrets.GITHUB_TOKEN }}'
           eslint: true
-          prettier: true
 
       - name: Comment with Test Coverage
         uses: dkershner6/jest-coverage-commenter-action@v1
