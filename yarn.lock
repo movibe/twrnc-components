@@ -5769,7 +5769,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-measure@npm:8.1.10":
+"@storybook/addon-measure@npm:8.1.10, @storybook/addon-measure@npm:^8.1.10":
   version: 8.1.10
   resolution: "@storybook/addon-measure@npm:8.1.10"
   dependencies:
@@ -5849,7 +5849,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-outline@npm:8.1.10":
+"@storybook/addon-outline@npm:8.1.10, @storybook/addon-outline@npm:^8.1.10":
   version: 8.1.10
   resolution: "@storybook/addon-outline@npm:8.1.10"
   dependencies:
@@ -8546,10 +8546,12 @@ __metadata:
     "@storybook/addon-controls": "npm:^8.1.10"
     "@storybook/addon-essentials": "npm:^8.1.10"
     "@storybook/addon-links": "npm:^8.1.10"
+    "@storybook/addon-measure": "npm:^8.1.10"
     "@storybook/addon-ondevice-actions": "npm:^7.6.19"
     "@storybook/addon-ondevice-backgrounds": "npm:^7.6.19"
     "@storybook/addon-ondevice-controls": "npm:^7.6.19"
     "@storybook/addon-ondevice-notes": "npm:^7.6.19"
+    "@storybook/addon-outline": "npm:^8.1.10"
     "@storybook/addon-react-native-web": "npm:^0.0.23"
     "@storybook/addon-themes": "npm:^8.1.10"
     "@storybook/addon-webpack5-compiler-babel": "npm:^3.0.3"

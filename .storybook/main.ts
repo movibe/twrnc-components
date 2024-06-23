@@ -11,7 +11,9 @@ module.exports = {
     "@storybook/addon-webpack5-compiler-babel",
     "@chromatic-com/storybook",
     "@storybook/addon-themes",
-    "storybook-addon-performance"
+    "storybook-addon-performance",
+    "@storybook/addon-measure",
+    "@storybook/addon-outline"
   ],
 
   framework: {
