@@ -99,9 +99,11 @@
     "lint-staged": "12.3.4",
     "organize-imports-cli": "0.10.0",
     "prettier": "3.3.1",
+    "prettier-plugin-tailwindcss": "^0.6.5",
     "scaffdog": "4.0.0",
     "storybook": "^8.1.10",
     "storybook-addon-performance": "^0.17.3",
+    "tsup": "^8.1.0",
     "typescript": "~5.3.3"
   },
   "resolutions": {

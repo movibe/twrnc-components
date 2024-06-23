@@ -6,10 +6,10 @@ import { BadgeVariants } from './Badge.variants'
 import { Text } from '../Text'
 
 type VariantTypes = VariantProps<typeof BadgeVariants>
-export type BadgeProps = {
+export type BadgeProps = VariantTypes & {
   testID?: string
-  children?: string
-} & VariantTypes
+  children: string
+}
 
 export const Badge = ({ testID = 'Badge', variant, children, ...props }: BadgeProps) => {
   const { base, text } = BadgeVariants({ variant })
