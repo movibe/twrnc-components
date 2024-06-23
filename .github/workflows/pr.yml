@@ -1,6 +1,14 @@
 name: Pull request development
 
-on: push
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   test:
@@ -18,17 +26,15 @@ jobs:
         with:
           node-version: 21.0.0
           cache: yarn
-          registry-url: https://npm.pkg.github.com
 
       - name: Install Dependencies
         run: yarn install --immutable
 
       - name: Run linters
-        uses: wearerequired/lint-action@v1
+        uses: wearerequired/lint-action@v2
         with:
           eslint: true
           prettier: true
-          auto_fix: true
 
       - name: Comment with Test Coverage
         uses: dkershner6/jest-coverage-commenter-action@v1
