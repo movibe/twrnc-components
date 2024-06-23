@@ -1,0 +1,44 @@
+name: Pull request development
+
+on: push
+
+jobs:
+  test:
+    name: Check
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message , '[skip ci]')"
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: 21.0.0
+          cache: yarn
+          registry-url: https://npm.pkg.github.com
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v1
+        with:
+          prettier: false
+          eslint: true
+          auto_fix: true
+          commit_message: 'fix: code style issues with ${linter}'
+
+      - name: Install Dependencies
+        run: yarn install --immutable
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GIT_PACKAGES_TOKEN }}
+
+      - name: Build
+        run: |
+          yarn bundle
+
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          exitOnceUploaded: true
