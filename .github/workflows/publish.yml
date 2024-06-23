@@ -28,7 +28,13 @@ jobs:
           - name: Build
             run: |
               yarn bundle
-              sed -i 's/"main": "expo-router\/entry"/"main": "dist\/index.js"/' package.json
+
+      - name: Replace single file
+        uses: richardrigutins/replace-in-files@v2
+        with:
+          files: 'package.json'
+          search-text: '"main": "expo-router/entry",'
+          replacement-text: '"main": "dist/index.js",'
 
       - name: Release
         env:
