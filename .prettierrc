@@ -1,0 +1,16 @@
+{
+    "arrowParens": "avoid",
+    "bracketSameLine": false,
+    "jsxSingleQuote": true,
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "plugins": [
+        "prettier-plugin-tailwindcss"
+    ],
+    "tailwindFunctions": [
+        "tw",
+        "tailwind"
+    ]
+}

@@ -1,6 +1,7 @@
 /* eslint-disable import/no-default-export */
 export default {
   content: ['./components/**/*.{js,jsx,ts,tsx}'],
+  darkMode: ['class', '[data-mode="dark"]'],
   corePlugins: {
     // preflight: false
   },
@@ -13,6 +14,21 @@ export default {
         sm: '10px',
       },
       colors: {
+        primary: {
+          DEFAULT: '#FF5A5F',
+          foreground: '#fff',
+          '80': 'rgba(255, 90, 95, 0.8)',
+        },
+        secondary: {
+          DEFAULT: '#00A699',
+          foreground: '#fff',
+          '80': 'rgba(0, 166, 153, 0.8)',
+        },
+        destructive: {
+          DEFAULT: '#FF5A5F',
+          foreground: '#fff',
+          '80': 'rgba(255, 90, 95, 0.8)',
+        },
         background: '#fff',
         'dark-background': '#333',
         black: '#000',

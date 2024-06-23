@@ -1,0 +1,52 @@
+name: Pull request development
+
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Check
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message , '[skip ci]')"
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup
+        uses: actions/setup-node@v2
+        with:
+          node-version: 21.0.0
+          cache: yarn
+
+      - name: Install Dependencies
+        run: yarn install --immutable
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          github_token: '${{ secrets.GH_TOKEN }}'
+          eslint: true
+
+      - name: Comment with Test Coverage
+        uses: dkershner6/jest-coverage-commenter-action@v1
+        with:
+          github_token: '${{ secrets.GH_TOKEN }}'
+
+      - name: Build
+        run: |
+          yarn bundle
+
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          exitOnceUploaded: true

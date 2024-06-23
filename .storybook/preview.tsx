@@ -1,6 +1,8 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import { UIProvider } from '../src/atomic/provider/UIProvider';
-
+import { UIProvider } from '../src/atomic/provider';
+import React from 'react';
+import { withThemeByClassName } from '@storybook/addon-themes'
+import { withPerformance } from 'storybook-addon-performance';
 export const parameters = {
   chromatic: { viewports: [360], pauseAnimationAtEnd: true },
   viewport: {
@@ -14,7 +16,6 @@ export const parameters = {
     gutter: '16px',
     maxWidth: '1024px'
   },
-  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -25,10 +26,19 @@ export const parameters = {
 
 const withThemeProvider = (Story: any, context: any) => {
   return (
-      <UIProvider>
-        <Story {...context} />
-      </UIPro>
+    <UIProvider>
+      <Story {...context} />
+    </UIProvider>
   )
 }
 
-export const decorators = [withThemeProvider]
+export const decorators = [withThemeProvider, withThemeByClassName({
+  themes: {
+    light: 'light',
+    dark: 'dark',
+  },
+  defaultTheme: 'light',
+}),
+  withPerformance
+]
+export const tags = ['autodocs', 'autodocs'];
