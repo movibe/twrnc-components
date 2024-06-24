@@ -5,6 +5,7 @@ import { TextProps, Text } from './'
 describe(`Text`, () => {
   const props: TextProps = {
     testID: 'Text',
+    children: 'Hello World!',
   }
 
   const el_container = mockTestID('View', props.testID!)
@@ -13,5 +14,11 @@ describe(`Text`, () => {
     render(<Text {...props} />)
     const sut = await screen.findByTestId(el_container)
     expect(sut).toBeTruthy()
+  })
+
+  it(`render children`, async () => {
+    render(<Text {...props} />)
+    const sut = await screen.findByText(props.children)
+    expect(sut.children.join('')).toEqual(props.children)
   })
 })

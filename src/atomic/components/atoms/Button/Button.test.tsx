@@ -1,17 +1,32 @@
 import React from 'react'
-import { render, fireEvent } from '@testing-library/react-native'
-import { Button } from '.'
+import { render, fireEvent, screen } from '@testing-library/react-native'
+import { Button, ButtonProps } from '.'
+import { mockTestID } from '@/src/utils/assignTestId'
 
 describe('Button', () => {
-  it('renders correctly with given text', () => {
-    const { getByText } = render(<Button onPress={() => {}}>Click me</Button>)
-    expect(getByText('Click me')).toBeTruthy()
+  const props: ButtonProps = {
+    testID: 'Button',
+    children: 'Hello world',
+    onPress: jest.fn(),
+  }
+  const el_container = mockTestID('Button', props.testID!)
+
+  it(`render component #${el_container}`, async () => {
+    render(<Button {...props} />)
+    const sut = await screen.findByTestId(el_container)
+    expect(sut).toBeTruthy()
   })
 
-  it('calls the onPress function when pressed', () => {
-    const onPressMock = jest.fn()
-    const { getByText } = render(<Button onPress={onPressMock}>Click me</Button>)
-    fireEvent.press(getByText('Click me'))
-    expect(onPressMock).toHaveBeenCalled()
+  it(`render children`, async () => {
+    render(<Button {...props} />)
+    const sut = await screen.findByText(props.children)
+    expect(sut.children.join('')).toEqual(props.children)
+  })
+
+  it(`onPress`, async () => {
+    render(<Button {...props} />)
+    const sut = await screen.findByTestId(el_container)
+    fireEvent.press(sut)
+    expect(props.onPress).toHaveBeenCalled()
   })
 })

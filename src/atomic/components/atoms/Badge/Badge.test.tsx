@@ -5,6 +5,7 @@ import { BadgeProps, Badge } from './'
 describe(`Badge/Badge`, () => {
   const props: BadgeProps = {
     testID: 'Badge',
+    children: 'Badge',
   }
 
   const el_container = mockTestID('View', props.testID!)
@@ -13,5 +14,11 @@ describe(`Badge/Badge`, () => {
     render(<Badge {...props} />)
     const sut = await screen.findByTestId(el_container)
     expect(sut).toBeTruthy()
+  })
+
+  it(`render children`, async () => {
+    render(<Badge {...props} />)
+    const sut = await screen.findByText(props.children)
+    expect(sut.children.join('')).toEqual(props.children)
   })
 })
