@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/movibe/twrnc-components/compare/v1.1.0...v1.2.0) (2024-07-01)
+
+
+### Features
+
+* tsup bundle config ([7dea788](https://github.com/movibe/twrnc-components/commit/7dea788b09b7012de2b0aab452cbc4362722bee4))
+
 # [1.1.0](https://github.com/movibe/twrnc-components/compare/v1.0.0...v1.1.0) (2024-07-01)
 
 
