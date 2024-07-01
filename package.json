@@ -1,6 +1,6 @@
 {
   "name": "twrnc-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "expo-router/entry",
   "files": [
     "dist",
@@ -75,7 +75,7 @@
     "@expo/metro-runtime": "~3.2.1",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^10.0.6",
+    "@semantic-release/github": "^10.0.7",
     "@semantic-release/npm": "^12.0.1",
     "@storybook/addon-actions": "8.1.11",
     "@storybook/addon-controls": "8.1.11",
