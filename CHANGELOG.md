@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/movibe/twrnc-components/compare/v1.0.0...v1.1.0) (2024-07-01)
+
+
+### Features
+
+* badge danger variant ([e48986c](https://github.com/movibe/twrnc-components/commit/e48986cd8f6e8a125945350170d904786b908e0f))
+* upgrade semantic release ([75abaf3](https://github.com/movibe/twrnc-components/commit/75abaf39233ad6a91a480a14669510a9e20aaaff))
+
 # 1.0.0 (2024-07-01)
 
 
