@@ -19,7 +19,7 @@ export const BadgeVariants = tv({
         base: 'border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80',
         text: '',
       },
-      destructive: {
+      danger: {
         base: 'border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80',
         text: '',
       },
