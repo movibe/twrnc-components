@@ -1,8 +1,9 @@
-name: Publish
+name: Release
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   publish:
@@ -21,7 +22,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          yarn install --immutable
+          yarn install
 
       - name: Build
         run: |
@@ -34,10 +35,8 @@ jobs:
           search-text: '"main": "expo-router/entry",'
           replacement-text: '"main": "dist/index.js",'
 
-      - name: Release
+      - name: Run release
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.GH_TOKEN }}
-
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: yarn semantic-release
