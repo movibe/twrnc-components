@@ -2,9 +2,13 @@ import { defineConfig } from 'tsup'
 
 export default defineConfig({
   entry: ['src/atomic/components/index.ts'],
-  format: ['cjs', 'esm'],
-  dts: true,
-  sourcemap: true,
+  treeshake: true,
+  sourcemap: 'inline',
+  minify: true,
   clean: true,
-  external: ['lodash', 'react'],
+  dts: true,
+  splitting: false,
+  format: ['cjs', 'esm'],
+  external: ['react'],
+  injectStyle: false,
 })
