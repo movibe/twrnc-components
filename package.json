@@ -128,7 +128,7 @@
   "overrides": {
     "react-docgen-typescript": "2.2.2"
   },
-  "packageManager": "yarn@4.2.2",
+  "packageManager": "yarn@4.3.1",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
