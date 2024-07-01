@@ -1,8 +1,9 @@
-name: Publish
+name: Release
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   publish:
@@ -14,30 +15,27 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Replace single file
+        uses: richardrigutins/replace-in-files@v2
+        with:
+          files: 'package.json'
+          search-text: '"main": "expo-router/entry",'
+          replacement-text: '"main": "dist/index.js","module": "dist/index.esm.js","types": "dist/index.d.ts",'
+
       - uses: actions/setup-node@v3
         with:
           node-version: 21.0.0
           cache: yarn
 
       - name: Install dependencies
-        run: |
-          yarn install --immutable
+        run: yarn install --frozen-lockfile
 
       - name: Build
         run: |
           yarn bundle
 
-      - name: Replace single file
-        uses: richardrigutins/replace-in-files@v2
-        with:
-          files: 'package.json'
-          search-text: '"main": "expo-router/entry",'
-          replacement-text: '"main": "dist/index.js",'
-
-      - name: Release
+      - name: Run release
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.GH_TOKEN }}
-
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: yarn semantic-release
