@@ -1,6 +1,14 @@
 name: 'Chromatic'
 
-on: push
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   chromatic:
@@ -20,7 +28,7 @@ jobs:
           cache: yarn
 
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: Run Chromatic
         uses: chromaui/action@latest
