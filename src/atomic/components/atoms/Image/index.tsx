@@ -8,5 +8,5 @@ export type ImageProps = Props & {
 }
 
 export const Image = ({ testID = 'Image', ...props }: ImageProps) => {
-  return <Base style={[tailwind('border border-gray-100')]} {...assignTestId('View', testID)} {...props} />
+  return <Base style={[tailwind('border border-gray-100')]} {...assignTestId('Image', testID)} {...props} />
 }
