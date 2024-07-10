@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/movibe/twrnc-components/compare/v1.2.0...v1.3.0) (2024-07-10)
+
+
+### Features
+
+* eslint tailwind ([d3eefa7](https://github.com/movibe/twrnc-components/commit/d3eefa764ca0d07c8f4998e714f5b11bf7469ca7))
+
 # [1.2.0](https://github.com/movibe/twrnc-components/compare/v1.1.0...v1.2.0) (2024-07-01)
 
 
