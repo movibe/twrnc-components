@@ -1,5 +1,16 @@
-/.expo
+.expo
 node_modules
 .storybook
+.github
+.expo-shared
+.ondevice
+storybook-static
 .yarn
 .ondevice
+**/*.scss
+**/*.css
+**/*.html
+coverage
+.vscode
+dist
+jest.config.js

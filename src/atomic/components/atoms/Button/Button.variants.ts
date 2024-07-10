@@ -15,10 +15,6 @@ export const ButtonVariants = tv({
         base: 'border-transparent bg-primary text-primary hover:bg-primary/80',
         text: '',
       },
-      secondary: {
-        base: 'border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80',
-        text: '',
-      },
       destructive: {
         base: 'border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80',
         text: '',
@@ -26,6 +22,10 @@ export const ButtonVariants = tv({
       outline: {
         base: 'border-primary',
         text: 'text-primary',
+      },
+      secondary: {
+        base: 'border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80',
+        text: '',
       },
     },
   },

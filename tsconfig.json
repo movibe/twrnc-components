@@ -3,11 +3,13 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "skipLibCheck": true,
-    "noEmit": true,
     "strict": true,
+    "noEmit": false,
+    "baseUrl": ".",
     "paths": {
       "@/*": [
         "./*"

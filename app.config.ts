@@ -1,5 +1,5 @@
 /* eslint-disable radix */
-import { ExpoConfig } from 'expo/config'
+import {ExpoConfig} from 'expo/config'
 
 const config: ExpoConfig = {
   name: 'myapp',
@@ -16,9 +16,13 @@ const config: ExpoConfig = {
   },
   ios: {
     supportsTablet: true,
+    userInterfaceStyle: 'automatic',
+
     // bundleIdentifier: 'com.example.myapp',
   },
   android: {
+    userInterfaceStyle: 'automatic',
+
     // package: 'com.example.myapp',
     adaptiveIcon: {
       foregroundImage: './src/assets/images/adaptive-icon.png',

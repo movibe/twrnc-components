@@ -1,11 +1,12 @@
+import { Text, TextProps } from './'
+
 import { mockTestID } from '@/src/utils/assignTestId'
 import { render, screen } from '@/src/utils/wrapper'
-import { TextProps, Text } from './'
 
 describe(`Text`, () => {
   const props: TextProps = {
-    testID: 'Text',
     children: 'Hello World!',
+    testID: 'Text',
   }
 
   const el_container = mockTestID('View', props.testID!)

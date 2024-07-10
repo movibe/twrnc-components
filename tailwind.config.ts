@@ -1,6 +1,6 @@
 /* eslint-disable import/no-default-export */
 export default {
-  content: ['./components/**/*.{js,jsx,ts,tsx}'],
+  content: ['./src/**/*.{ts,tsx}'],
   darkMode: ['class', '[data-mode="dark"]'],
   corePlugins: {
     // preflight: false

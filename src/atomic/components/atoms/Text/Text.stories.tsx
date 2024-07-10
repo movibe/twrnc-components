@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { Text, TextProps } from './index'
 
 const meta: Meta<TextProps> = {

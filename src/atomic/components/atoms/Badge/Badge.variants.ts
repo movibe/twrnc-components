@@ -11,21 +11,21 @@ export const BadgeVariants = tv({
 
   variants: {
     variant: {
-      default: {
-        base: 'border-transparent bg-primary text-primary-foreground hover:bg-primary/80',
-        text: '',
-      },
-      secondary: {
-        base: 'border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80',
-        text: '',
-      },
       danger: {
         base: 'border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80',
+        text: '',
+      },
+      default: {
+        base: 'border-transparent bg-primary text-primary-foreground hover:bg-primary/80',
         text: '',
       },
       outline: {
         base: 'border-primary',
         text: 'text-primary',
+      },
+      secondary: {
+        base: 'border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80',
+        text: '',
       },
     },
   },

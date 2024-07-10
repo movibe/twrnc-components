@@ -1,9 +1,12 @@
 import { View } from 'react-native'
+import { VariantProps } from 'tailwind-variants'
+
+import { Text } from '../Text'
+
+import { BadgeVariants } from './Badge.variants'
+
 import { tailwind } from '@/src/libs/tailwind'
 import { assignTestId } from '@/src/utils/assignTestId'
-import { VariantProps } from 'tailwind-variants'
-import { BadgeVariants } from './Badge.variants'
-import { Text } from '../Text'
 
 type VariantTypes = VariantProps<typeof BadgeVariants>
 export type BadgeProps = VariantTypes & {
@@ -11,7 +14,7 @@ export type BadgeProps = VariantTypes & {
   children: string
 }
 
-export const Badge = ({ testID = 'Badge', variant, children, ...props }: BadgeProps) => {
+export const Badge = ({ children, testID = 'Badge', variant, ...props }: BadgeProps) => {
   const { base, text } = BadgeVariants({ variant })
   return (
     <View {...assignTestId('View', testID)} style={[tailwind(base())]} {...props}>
