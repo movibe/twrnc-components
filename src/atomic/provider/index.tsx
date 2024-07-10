@@ -1,8 +1,9 @@
-import { tailwind } from '@/src/libs/tailwind'
-import { DarkTheme, ThemeProvider, DefaultTheme } from '@react-navigation/native'
+import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native'
 import { ReactNode } from 'react'
 import { useColorScheme, View } from 'react-native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
+
+import { tailwind } from '@/src/libs/tailwind'
 
 export type UIProviderProps = {
   children: ReactNode

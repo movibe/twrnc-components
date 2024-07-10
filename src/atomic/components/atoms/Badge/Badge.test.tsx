@@ -1,11 +1,12 @@
+import { Badge, BadgeProps } from './'
+
 import { mockTestID } from '@/src/utils/assignTestId'
 import { render, screen } from '@/src/utils/wrapper'
-import { BadgeProps, Badge } from './'
 
 describe(`Badge/Badge`, () => {
   const props: BadgeProps = {
-    testID: 'Badge',
     children: 'Badge',
+    testID: 'Badge',
   }
 
   const el_container = mockTestID('View', props.testID!)

@@ -1,13 +1,14 @@
-import React from 'react'
-import { render, fireEvent, screen } from '@testing-library/react-native'
+import { fireEvent, render, screen } from '@testing-library/react-native'
+
 import { Button, ButtonProps } from '.'
+
 import { mockTestID } from '@/src/utils/assignTestId'
 
 describe('Button', () => {
   const props: ButtonProps = {
-    testID: 'Button',
     children: 'Hello world',
     onPress: jest.fn(),
+    testID: 'Button',
   }
   const el_container = mockTestID('Button', props.testID!)
 
@@ -20,6 +21,7 @@ describe('Button', () => {
   it(`render children`, async () => {
     render(<Button {...props} />)
     const sut = await screen.findByText(props.children)
+    // eslint-disable-next-line testing-library/no-node-access
     expect(sut.children.join('')).toEqual(props.children)
   })
 

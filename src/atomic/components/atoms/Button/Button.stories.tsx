@@ -1,17 +1,17 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import React from 'react'
+import type { Meta } from '@storybook/react'
+
 import { View } from 'react-native'
+
 import { Button } from '.'
 
 const meta = {
-  title: 'Atoms/Button',
-  component: Button,
-  args: {
-    children: 'Hello world',
-  },
   argTypes: {
     onPress: { action: 'clicked' },
   },
+  args: {
+    children: 'Hello world',
+  },
+  component: Button,
   decorators: [
     Story => (
       <View style={{ padding: 16 }}>
@@ -19,6 +19,7 @@ const meta = {
       </View>
     ),
   ],
+  title: 'Atoms/Button',
 } satisfies Meta<typeof Button>
 
 export default meta
